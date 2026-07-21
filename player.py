@@ -2,6 +2,7 @@ from constants import PLAYER_RADIUS, PLAYER_ROTATION_SPEED, PLAYER_SPEED, PLAYER
 from circleshape import CircleShape
 import pygame
 from shot import Shot
+from gamestats import GameStats
 
 class Player(CircleShape):
     
@@ -9,6 +10,7 @@ class Player(CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
         self.cooldown_timer = 0
+        self.stats = GameStats()
 
     # in the Player class
     def triangle(self) -> list[pygame.Vector2]:
