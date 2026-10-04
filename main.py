@@ -53,8 +53,16 @@ def main():
         for asteroid in asteroids:
             if asteroid.collides_with(player):
                 log_event("player_hit")
-                print("Game Over!")
-                sys.exit()
+
+                player.stats.update_lives(-1)
+
+                if player.stats.get_lives() < 1:
+                    print("Game Over!")
+                    sys.exit()
+
+                player.position = pygame.Vector2(player_x, player_y)
+
+
 
         for asteroid in asteroids:
             for shot in shots:
@@ -68,7 +76,7 @@ def main():
         screen.fill("black")
 
         screen.blit(text_manager.create_text_image(f"Score: {player.stats.get_score()}", (254, 255, 255)), (100, 50))
-
+        screen.blit(text_manager.create_text_image(f"Lives: {player.stats.get_lives()}", (254, 255, 255)), (100, 80))
         for obj in drawable:
             obj.draw(screen)
 
