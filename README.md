@@ -13,7 +13,7 @@ To install uv, you can reference the [official installation guide](https://docs.
 # Extending the project
 
 - Add a scoring system :white_check_mark:
-- Implement multiple lives and respawning
+- Implement multiple lives and respawning :white_check_mark:
 - Add an explosion effect for the asteroids
 - Add acceleration to the player movement
 - Make the objects wrap around the screen instead of disappearing
